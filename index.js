@@ -9,4 +9,4 @@ const app = express();
 
 initateApp(app, express);
 
-export default initateApp;
+export default app;
