@@ -32,6 +32,7 @@ export const getAllData = async (req, res) => {
     });
     res.json({ message: "Done", result });
   } catch (error) {
+    res.json({ message: "Catch Error", error });
     console.log(error);
   }
 };
