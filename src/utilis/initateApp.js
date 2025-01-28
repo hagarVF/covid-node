@@ -7,7 +7,7 @@ export const initateApp = (app, express) => {
   app.use(cors());
 
   app.use("/city", allRouter.cityRouter);
-  app.use("/public/images", express.static("public/images"));
+  app.use("/images", express.static("images"));
   app.all("*", (req, res) => {
     res.json({ message: "not found" });
   });
