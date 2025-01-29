@@ -1,13 +1,18 @@
 import { connectionDB } from "../../DB/connection.js";
 import * as allRouter from "../module/index.routes.js";
 import cors from "cors";
+import path from "path";
 
 export const initateApp = (app, express) => {
   app.use(express.json());
   app.use(cors());
 
   app.use("/city", allRouter.cityRouter);
-  app.use("/images", express.static("public/images"));
+  // app.use("/images", express.static("public/images"));
+  app.use(
+    "/images",
+    express.static(path.join(process.cwd(), "public", "images"))
+  );
   app.all("*", (req, res) => {
     res.json({ message: "not found" });
   });
