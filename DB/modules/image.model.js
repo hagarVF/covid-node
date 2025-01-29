@@ -19,7 +19,7 @@ const imageSchema = new Schema(
 );
 
 imageSchema.post("init", (doc) => {
-  doc.image = "https://covid-node.vercel.app/" + "images/" + doc.image;
+  doc.image = "https://covid-node.vercel.app/" + "public/images/" + doc.image;
 });
 
 const imageModel = mongoose.model.Image || model("Image", imageSchema);
